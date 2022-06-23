@@ -30,7 +30,7 @@ function App() {
     .then(res=>res.json())
     .then(data=>{
       setCurrencyChoice([...Object.keys(data.rates)])
-      setExchangeRate(data.conversion_rates[toCurrency])
+      setExchangeRate(data.rates[toCurrency])
     })
     },[fromCurrency, toCurrency]//! [] is for dependency array to avoid infinite loop, if you don't put it, it will run every time the component is rendered
   )
